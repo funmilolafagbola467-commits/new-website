@@ -1,0 +1,295 @@
+/* ========================
+   GLOBAL STYLING
+======================== */
+
+:root {
+  --deep-blue: #0A1F44;
+  --light-blue: #031633;
+  --soft-blue: #2E5AAC;
+  --white: #FFFFFF;
+  --accent-red: #D62828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ‘Segoe UI’, sans-serif;
+}
+
+Body {
+  Background-color: var(--soft-blue);
+  Color: var(--white);
+  Line-height: 1.6;
+}
+
+/* ========================
+   HEADER
+======================== */
+
+Header {
+  Background: var(--deep-blue);
+  Color: var(--white);
+  Display: flex;
+  Justify-content: space-between;
+  Align-items: center;
+  Padding: 15px 8%;
+  Position: sticky;
+  Top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  Font-size: 18px;
+  background: url("images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 164px;
+  height: 180px;
+}
+
+
+Nav ul {
+  List-style: none;
+  Display: flex;
+  flex-direction: row;
+  Gap: 20px;
+}
+
+Nav a {
+  Color: var(--white);
+  Text-decoration: none;
+  Font-size: 14px;
+  Transition: 0.3s;
+}
+
+Nav a:hover {
+  Color: var(--accent-red);
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ========================
+   HERO SECTION
+======================== */
+
+.hero {
+  Background: linear-gradient(rgba(10,31,68,0.8), rgba(10,31,68,0.8)),
+url(“images/school-banner.jpg”) center/cover;
+  color: var(--white);
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  Font-size: 42px;
+}
+
+.hero p {
+  Margin-top: 10px;
+  Font-size: 24px;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+
+.btn {
+  Background: var(--accent-red);
+  Color: var(--white);
+  Padding: 12px 30px;
+  Margin-top: 20px;
+  Text-decoration: none;
+  Border-radius: 10px;
+  Display: inline-block;
+  Transition: 0.3s;
+}
+
+.btn:hover {
+  Background: #a61c1c;
+}
+
+/* ========================
+   SECTIONS
+======================== */
+
+Section {
+  Padding: 70px 8%;
+}
+
+Section:nth-child(even) {
+  Background: var(--light-blue);
+}
+
+H2 {
+  Text-align: center;
+  Margin-bottom: 30px;
+  Color: var(--white);
+  Font-size: 28px;
+}
+
+/* ========================
+   CARDS (Facilities, News)
+======================== */
+
+.grid {
+  Display: grid;
+  Grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  Gap: 25px;
+}
+
+.card {
+  Background: var(--white);
+  Padding: 30px;
+  Border-radius: 10px;
+  Box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  Text-align: center;
+  Transition: 0.3s;
+}
+
+.card:hover {
+  Transform: translateY(-5px);
+  Border-bottom: 4px solid var(--accent-red);
+}
+
+.card h3 {
+  color: var(--deep-blue);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ========================
+   GALLERY
+======================== */
+
+#gallery img {
+  Width: 100%;
+  Height: 200px;
+  Object-fit: cover;
+  Border-radius: 10px;
+}
+
+/* ========================
+   CONTACT FORM
+======================== */
+
+Form {
+  Max-width: 600px;
+  Margin: auto;
+  Display: flex;
+  Flex-direction: column;
+  Gap: 15px;
+}
+
+Form input,
+Form textarea {
+  Padding: 12px;
+  Border-radius: 6px;
+  Border: 1px solid #ccc;
+}
+
+Form button {
+  Background: var(--deep-blue);
+  Color: var(--soft-blue);
+  Padding: 12px;
+  Border: none;
+  Border-radius: 6px;
+  Cursor: pointer;
+  Transition: 0.3s;
+}
+
+Form button:hover {
+  Background: var(--accent-red);
+}
+
+/* ========================
+   WHATSAPP BUTTON
+======================== */
+
+.whatsapp {
+  Position: fixed;
+  Bottom: 20px;
+  Right: 20px;
+  Background: var(--white);
+  Color: rgb(255, 255, 255);
+  Font-size: 24px;
+  Padding: 15px;
+  Border-radius: 50%;
+  Text-decoration: none;
+  Box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ========================
+   FOOTER
+======================== */
+
+Footer {
+  Background: var(--deep-blue);
+  Color: var(--accent-red);
+  Text-align: center;
+  Padding: 20px;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--deep-blue);
+    width: 200px;
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
