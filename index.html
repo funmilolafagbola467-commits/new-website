@@ -594,12 +594,9 @@
   // HAMBURGER MENU
   var hamburger = document.getElementById('hamburgerBtn');
   var mobileMenu = document.getElementById('mobileMenu');
-
   hamburger.addEventListener('click', function() {
     mobileMenu.classList.toggle('open');
   });
-
-  // Close menu when any link is clicked
   var menuLinks = mobileMenu.querySelectorAll('a');
   menuLinks.forEach(function(link) {
     link.addEventListener('click', function() {
@@ -609,15 +606,16 @@
 
   // CONTACT FORM
   var submitBtn = document.getElementById('submitBtn');
-  submitBtn.addEventListener('click', function() {
-    alert('Thank you! We will get back to you soon.\n\nOr call us directly:\n08039404776 | 08060581513');
-  });
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function() {
+      alert('Thank you! We will get back to you soon.\n\nOr call us directly:\n08039404776 | 08060581513');
+    });
+  }
 
-
-
-  // HERO INLINE VIDEO
+  // HERO INLINE VIDEO (portrait card on right side)
   function loadHeroVideo() {
     var wrap = document.getElementById('heroVidWrap');
+    if (!wrap) return;
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/URCGfuPex7k?autoplay=1&rel=0&playsinline=1&modestbranding=1';
     iframe.title = 'Career Builder Schools';
@@ -630,9 +628,27 @@
     wrap.appendChild(iframe);
   }
 
-  // HERO VIDEO MODAL
+  // VIDEO SECTION - TAP TO PLAY
+  function loadVideo(num) {
+    var ids = { 1: 'Lo2HKonppss', 2: 'GHIyhIZ9RhA' };
+    var wrap = document.getElementById('vwrap' + num);
+    if (!wrap) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + ids[num] + '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+    iframe.title = 'CBS Video ' + num;
+    iframe.frameBorder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'no-referrer';
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+    wrap.innerHTML = '';
+    wrap.appendChild(iframe);
+  }
+
+  // WATCH SCHOOL VIDEOS BUTTON MODAL
   function openVideoModal() {
     var wrap = document.getElementById('heroVideoWrap');
+    if (!wrap) return;
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/URCGfuPex7k?autoplay=1&rel=0&playsinline=1&modestbranding=1';
     iframe.title = 'Career Builder Schools Video';
@@ -648,7 +664,8 @@
   }
   function closeVideoModal() {
     document.getElementById('videoModal').classList.remove('open');
-    document.getElementById('heroVideoWrap').innerHTML = '';
+    var wrap = document.getElementById('heroVideoWrap');
+    if (wrap) wrap.innerHTML = '';
     document.body.style.overflow = '';
   }
   function closeVideoModalOnBg(e) {
@@ -663,4 +680,18 @@
     entries.forEach(function(e) {
       if (e.isIntersecting) {
         e.target.style.opacity = '1';
-  
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  var animItems = document.querySelectorAll('.prog-card, .news-card, .testi-card, .step, .gallery-item, .video-card, .feat-row');
+  animItems.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
