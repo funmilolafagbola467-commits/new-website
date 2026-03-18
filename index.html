@@ -8,7 +8,7 @@
   <style>
     :root {
       --navy:#0B1F3A; --blue:#1A6BA0; --sky:#4DB8E8;
-      --gold:#D4A017; --gold-light:#F5C842; --school-blue:#1565C0; --school-blue-light:#1E88E5;
+      --gold:#C0001A; --gold-light:#E8001F; --school-blue:#1565C0; --school-blue-light:#1E88E5;
       --cream:#FDF8EF; --white:#FFFFFF; --gray:#6B7280;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -44,7 +44,7 @@
     .hero{min-height:92vh;background:linear-gradient(135deg,#0B1F3A 0%,#1A3560 55%,#0B2818 100%);display:flex;align-items:center;padding:60px 5%;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
     .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-    .hero-badge{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid var(--gold);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+    .hero-badge{display:inline-block;background:rgba(192,0,26,0.15);border:1px solid var(--gold);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.3rem);color:white;line-height:1.18;margin-bottom:14px;}
     .hero h1 em{color:var(--gold);font-style:normal;}
     .hero-motto{color:var(--sky);font-size:0.92rem;font-style:italic;margin-bottom:14px;font-weight:500;}
@@ -104,7 +104,7 @@
     .about-badge strong{font-family:'Playfair Display',serif;font-size:1.8rem;display:block;}
     .about-badge small{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
     .feat-row{display:flex;align-items:flex-start;gap:13px;margin-bottom:16px;}
-    .feat-icon{width:40px;height:40px;background:rgba(212,160,23,0.12);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .feat-icon{width:40px;height:40px;background:rgba(192,0,26,0.12);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
     .feat-row h4{font-weight:600;margin-bottom:3px;font-size:0.92rem;}
     .feat-row p{color:var(--gray);font-size:0.82rem;line-height:1.55;}
 
@@ -135,7 +135,7 @@
     .news-card:hover{box-shadow:0 10px 34px rgba(0,0,0,0.1);transform:translateY(-4px);}
     .news-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:42px;}
     .news-body{padding:18px;}
-    .news-tag{display:inline-block;background:rgba(212,160,23,0.1);color:var(--gold);font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;}
+    .news-tag{display:inline-block;background:rgba(192,0,26,0.1);color:var(--gold);font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;}
     .news-body h3{font-family:'Playfair Display',serif;font-size:1.02rem;margin-bottom:7px;line-height:1.35;}
     .news-body p{color:var(--gray);font-size:0.82rem;line-height:1.6;margin-bottom:13px;}
     .news-meta{display:flex;justify-content:space-between;align-items:center;}
@@ -190,7 +190,7 @@
     /* RESPONSIVE */
     @media (max-width:900px){
       .hero-inner{grid-template-columns:1fr;}
-      .hero-photo{display:none;}
+      .hero-photo{display:block;max-width:280px;margin:0 auto;}
       .about-inner,.contact-inner{grid-template-columns:1fr;gap:36px;}
       .video-grid{grid-template-columns:1fr;}
       .gallery-grid{grid-template-columns:1fr 1fr;}
@@ -246,6 +246,24 @@
       background: #111; color: white;
       padding: 12px 16px; font-size: 0.88rem;
       font-weight: 600; text-align: center;
+    }
+
+    @media (max-width:600px){
+      .hero{padding:50px 5% 50px;}
+      .hero h1{font-size:2rem !important;margin-bottom:12px;}
+      .hero p{font-size:1rem !important;line-height:1.7;}
+      .hero-motto{font-size:1rem !important;}
+      .hero-badge{font-size:0.78rem;}
+      .hero-btns{flex-direction:column;gap:12px;}
+      .hero-btns a{text-align:center;padding:14px 20px;font-size:1rem;}
+      .hero-stats{gap:24px;margin-top:32px;}
+      .stat-num{font-size:1.7rem;}
+      .stat-label{font-size:0.72rem;}
+      .hero-photo{max-width:240px;margin:24px auto 0;}
+      .hero-inner{gap:28px;}
+      .section-title{font-size:1.7rem !important;}
+      .section-subtitle{font-size:0.95rem;}
+      section{padding:56px 5%;}
     }
   </style>
 </head>
@@ -308,16 +326,20 @@
         <div><span class="stat-num">100%</span><span class="stat-label">Govt Approved</span></div>
       </div>
     </div>
-    <div class="hero-photo" style="overflow:hidden;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.1);background:#000;max-width:340px;width:100%;">
-      <div style="position:relative;padding-top:177.78%;width:100%;" id="heroVidWrap">
-        <div onclick="loadHeroVideo()" style="position:absolute;inset:0;background:linear-gradient(135deg,#0B1F3A,#1565C0);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;">
-          <img src="https://img.youtube.com/vi/URCGfuPex7k/hqdefault.jpg" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.65;">
-          <div style="width:72px;height:72px;background:rgba(255,0,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;box-shadow:0 4px 24px rgba(0,0,0,0.5);">
+    <div class="hero-photo" style="overflow:hidden;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.1);background:#000;max-width:320px;width:100%;align-self:center;">
+      <a href="https://youtube.com/shorts/URCGfuPex7k" target="_blank" style="display:block;position:relative;padding-top:177.78%;text-decoration:none;">
+        <img src="https://img.youtube.com/vi/URCGfuPex7k/hqdefault.jpg"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.75;"
+             onerror="this.style.background='linear-gradient(135deg,#0B1F3A,#1565C0)';this.style.opacity='1';"
+             alt="Career Builder Schools Video"/>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);">
+          <div style="width:72px;height:72px;background:rgba(192,0,26,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.5);">
             <span style="color:white;font-size:30px;margin-left:6px;">▶</span>
           </div>
-          <p style="color:white;font-size:0.82rem;margin-top:14px;position:relative;z-index:2;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Tap to watch school video</p>
+          <p style="color:white;font-size:0.85rem;margin-top:14px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,0.9);">Tap to watch on YouTube</p>
         </div>
-      </div>
+      </a>
+    </div>
     </div>
   </div>
 </section>
