@@ -84,7 +84,7 @@
     .video-section{background:var(--navy);}
     .video-section .section-title{color:white;}
     .video-section .section-subtitle{color:rgba(255,255,255,0.58);}
-    .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;justify-items:center;}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
     .video-card{border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);width:100%;max-width:340px;}
     .video-wrap{position:relative;width:100%;padding-top:177.78%;}
     .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;}
@@ -326,16 +326,15 @@
         <div><span class="stat-num">100%</span><span class="stat-label">Govt Approved</span></div>
       </div>
     </div>
-    <div class="hero-photo" style="overflow:hidden;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.1);background:#000;max-width:320px;width:100%;align-self:center;">
-      <a href="https://youtube.com/shorts/URCGfuPex7k" target="_blank" style="display:block;position:relative;padding-top:177.78%;text-decoration:none;">
-        <img src="https://img.youtube.com/vi/URCGfuPex7k/hqdefault.jpg"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.75;"
-             onerror="this.style.background='linear-gradient(135deg,#0B1F3A,#1565C0)';this.style.opacity='1';"
-             alt="Career Builder Schools Video"/>
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);">
-          <div style="width:72px;height:72px;background:rgba(192,0,26,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.5);">
-            <span style="color:white;font-size:30px;margin-left:6px;">▶</span>
-          </div>
+    <div class="hero-photo" style="overflow:hidden;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.15);background:#000;max-width:320px;width:100%;align-self:center;">
+      <video
+        src="hero.mp4"
+        playsinline
+        controls
+        preload="metadata"
+        style="width:100%;display:block;border-radius:18px;"
+      ></video>
+    </div>
           <p style="color:white;font-size:0.85rem;margin-top:14px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,0.9);">Tap to watch on YouTube</p>
         </div>
       </a>
@@ -388,35 +387,19 @@
   </div>
   <div class="video-grid">
     <div class="video-card">
-      <div class="video-wrap" id="vwrap1">
-        <div class="video-thumb" onclick="loadVideo(1)" style="position:absolute;inset:0;background:linear-gradient(135deg,#0B1F3A,#1565C0);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;">
-          <img src="https://img.youtube.com/vi/Lo2HKonppss/hqdefault.jpg" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;">
-          <div style="width:70px;height:70px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
-            <span style="color:white;font-size:28px;margin-left:5px;">▶</span>
-          </div>
-          <p style="color:white;font-size:0.85rem;margin-top:14px;position:relative;z-index:2;font-weight:600;">Tap to play video</p>
-        </div>
-      </div>
-      <div class="video-info"><h4>Career Builder Schools – School Life</h4><p>Watch our students in action</p></div>
+      <video src="video1.mp4" controls playsinline preload="metadata"
+        style="width:100%;display:block;border-radius:14px 14px 0 0;max-height:420px;background:#000;"></video>
+      <div class="video-info"><h4>Career Builder Schools – School Life</h4><p>Students in action</p></div>
     </div>
     <div class="video-card">
-      <div class="video-wrap" id="vwrap2">
-        <div class="video-thumb" onclick="loadVideo(2)" style="position:absolute;inset:0;background:linear-gradient(135deg,#0B1F3A,#1565C0);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;">
-          <img src="https://img.youtube.com/vi/GHIyhIZ9RhA/hqdefault.jpg" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;">
-          <div style="width:70px;height:70px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
-            <span style="color:white;font-size:28px;margin-left:5px;">▶</span>
-          </div>
-          <p style="color:white;font-size:0.85rem;margin-top:14px;position:relative;z-index:2;font-weight:600;">Tap to play video</p>
-        </div>
-      </div>
-      <div class="video-info"><h4>Career Builder Schools – Campus Highlights</h4><p>See our vibrant school community</p></div>
+      <video src="video2.mp4" controls playsinline preload="metadata"
+        style="width:100%;display:block;border-radius:14px 14px 0 0;max-height:420px;background:#000;"></video>
+      <div class="video-info"><h4>Career Builder Schools – Campus Highlights</h4><p>Our vibrant school community</p></div>
     </div>
-  </div>
-  <div style="text-align:center;margin-top:28px;">
-    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:12px;">Having trouble playing? Watch directly on YouTube:</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://youtube.com/shorts/Lo2HKonppss" target="_blank" style="background:rgba(255,0,0,0.8);color:white;padding:10px 22px;border-radius:25px;text-decoration:none;font-weight:700;font-size:0.88rem;transition:all 0.2s;">▶ Watch Video 1 on YouTube</a>
-      <a href="https://youtube.com/shorts/GHIyhIZ9RhA" target="_blank" style="background:rgba(255,0,0,0.8);color:white;padding:10px 22px;border-radius:25px;text-decoration:none;font-weight:700;font-size:0.88rem;transition:all 0.2s;">▶ Watch Video 2 on YouTube</a>
+    <div class="video-card">
+      <video src="video3.mp4" controls playsinline preload="metadata"
+        style="width:100%;display:block;border-radius:14px 14px 0 0;max-height:420px;background:#000;"></video>
+      <div class="video-info"><h4>Career Builder Schools – School Activities</h4><p>Events and activities at CBS</p></div>
     </div>
   </div>
 </section>
@@ -481,7 +464,7 @@
   </div>
   <div style="text-align:center;margin-top:46px">
     <a class="btn-primary" href="admission.html" style="font-size:1rem;padding:14px 36px">Fill Admission Form</a>
-    <p style="color:rgba(255,255,255,0.44);margin-top:13px;font-size:0.84rem">📞 08039404776 &nbsp;|&nbsp; 08060581513 &nbsp;|&nbsp; <a href="mailto:careerbuilder06@gmail.com" style="color:inherit;text-decoration:underline;cursor:pointer;">&#99;&#97;&#114;&#101;&#101;&#114;&#98;&#117;&#105;&#108;&#100;&#101;&#114;&#48;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+    <p style="color:rgba(255,255,255,0.44);margin-top:13px;font-size:0.84rem">📞 08039404776 &nbsp;|&nbsp; 08060581513 &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#7a191b081f1f08180f13161e1f084a4c3a1d171b131654191517" style="color:inherit;text-decoration:underline;cursor:pointer;">&#99;&#97;&#114;&#101;&#101;&#114;&#98;&#117;&#105;&#108;&#100;&#101;&#114;&#48;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
   </div>
 </section>
 
@@ -545,7 +528,7 @@
       <p class="contact-info-text">We'd love to hear from you. Visit us or reach out anytime — we're always happy to help.</p>
       <div class="contact-detail"><span class="c-icon">📍</span><div><h4>Address</h4><p>3, Alabaja Street, Iyedi-Titun, Ota, Ogun State, Nigeria</p></div></div>
       <div class="contact-detail"><span class="c-icon">📞</span><div><h4>Phone</h4><p>08039404776 &nbsp;|&nbsp; 08060581513</p></div></div>
-      <div class="contact-detail"><span class="c-icon">📧</span><div><h4>Email</h4><p><a href="mailto:careerbuilder06@gmail.com" style="color:inherit;text-decoration:underline;cursor:pointer;">&#99;&#97;&#114;&#101;&#101;&#114;&#98;&#117;&#105;&#108;&#100;&#101;&#114;&#48;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p></div></div>
+      <div class="contact-detail"><span class="c-icon">📧</span><div><h4>Email</h4><p><a href="/cdn-cgi/l/email-protection#e487859681819686918d88808196d4d2a48389858d88ca878b89" style="color:inherit;text-decoration:underline;cursor:pointer;">&#99;&#97;&#114;&#101;&#101;&#114;&#98;&#117;&#105;&#108;&#100;&#101;&#114;&#48;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p></div></div>
       <div class="contact-detail"><span class="c-icon">🕐</span><div><h4>Office Hours</h4><p>Monday – Friday: 8:00 AM – 4:00 PM</p></div></div>
       <div class="contact-detail"><span class="c-icon">✦</span><div><h4>Motto</h4><p><em>Independent Tomorrow</em></p></div></div>
       <div style="margin-top:24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:22px;text-align:center">
@@ -585,7 +568,7 @@
         <a class="social-btn" href="#">📘</a>
         <a class="social-btn" href="#">📸</a>
         <a class="social-btn" href="https://wa.me/2348039404776" target="_blank">💬</a>
-        <a class="social-btn" href="mailto:careerbuilder06@gmail.com" title="Email us">📧</a>
+        <a class="social-btn" href="/cdn-cgi/l/email-protection#bddedccfd8d8cfdfc8d4d1d9d8cf8d8bfddad0dcd4d193ded2d0" title="Email us">📧</a>
       </div>
     </div>
     <div class="footer-col"><h4>Quick Links</h4><ul>
@@ -612,7 +595,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   // ── HAMBURGER MENU ──
   document.getElementById('hamburgerBtn').addEventListener('click', function() {
@@ -628,61 +611,17 @@
   var submitBtn = document.getElementById('submitBtn');
   if (submitBtn) {
     submitBtn.addEventListener('click', function() {
-      alert('Thank you! We will get back to you soon.\n\nCall us: 08039404776 | 08060581513\nEmail: careerbuilder06@gmail.com');
+      alert('Thank you! We will get back to you soon.\n\nCall: 08039404776 | 08060581513');
     });
-  }
-
-  // ── HERO INLINE VIDEO ──
-  function loadHeroVideo() {
-    var wrap = document.getElementById('heroVidWrap');
-    if (!wrap) return;
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/URCGfuPex7k?autoplay=1&rel=0&playsinline=1&modestbranding=1';
-    f.title = 'Career Builder Schools';
-    f.frameBorder = '0';
-    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    f.allowFullscreen = true;
-    f.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-    wrap.innerHTML = '';
-    wrap.appendChild(f);
-  }
-
-  // ── VIDEO SECTION TAP TO PLAY ──
-  function loadVideo(num) {
-    var ids = {1:'Lo2HKonppss', 2:'GHIyhIZ9RhA'};
-    var wrap = document.getElementById('vwrap' + num);
-    if (!wrap) return;
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + ids[num] + '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
-    f.title = 'CBS Video ' + num;
-    f.frameBorder = '0';
-    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    f.allowFullscreen = true;
-    f.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-    wrap.innerHTML = '';
-    wrap.appendChild(f);
   }
 
   // ── WATCH SCHOOL VIDEOS MODAL ──
   function openVideoModal() {
-    var wrap = document.getElementById('heroVideoWrap');
-    if (!wrap) return;
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/URCGfuPex7k?autoplay=1&rel=0&playsinline=1&modestbranding=1';
-    f.title = 'Career Builder Schools Video';
-    f.frameBorder = '0';
-    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    f.allowFullscreen = true;
-    f.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-    wrap.innerHTML = '';
-    wrap.appendChild(f);
     document.getElementById('videoModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeVideoModal() {
     document.getElementById('videoModal').classList.remove('open');
-    var wrap = document.getElementById('heroVideoWrap');
-    if (wrap) wrap.innerHTML = '';
     document.body.style.overflow = '';
   }
   function closeVideoModalOnBg(e) {
