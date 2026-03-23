@@ -266,6 +266,44 @@
       .section-subtitle{font-size:0.95rem;}
       section{padding:56px 5%;}
     }
+  
+    /* ── TEXT SHADOWS FOR READABILITY ── */
+    /* White text - dark shadow */
+    .hero h1, .hero p, .hero-motto, .hero-badge,
+    .stat-num, .stat-label,
+    .video-section .section-title, .video-section .section-subtitle,
+    .admissions .section-title, .admissions .section-subtitle,
+    .contact .section-title, .contact-info-text,
+    .contact-detail p, .contact-detail h4,
+    .step h3, .step p, .step-num,
+    .video-info h4, .video-info p,
+    .footer-brand p, .footer-col h4, .footer-col ul a,
+    .footer-bottom, nav .nav-logo-text span, nav .nav-logo-text small,
+    .nav-links a, .mobile-menu a,
+    .announce,
+    .testi-card p, .testi-author h4, .testi-author span { 
+      text-shadow: 0 1px 3px rgba(0,0,0,0.45), 0 0 6px rgba(0,0,0,0.25); 
+    }
+
+    /* Red/gold accent text - white outline shadow */
+    .section-label, .hero h1 em, .hero-motto,
+    .news-tag, .news-link, .testi-stars,
+    .nav-logo-text small, .about-badge small,
+    .form-card-header p { 
+      text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 1px 3px rgba(255,255,255,0.7); 
+    }
+
+    /* Dark navy text on light backgrounds - subtle shadow */
+    .section-title, .prog-body h3, .news-body h3,
+    .feat-row h4, .form-card-header h2 { 
+      text-shadow: 0 1px 2px rgba(0,0,0,0.12); 
+    }
+
+    /* Buttons text */
+    .btn-primary, .btn-outline, .nav-cta, .form-submit, .btn-next, .btn-submit {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
   </style>
 </head>
 <body>
