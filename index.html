@@ -285,21 +285,71 @@
     }
 
   
-    /* ── SUBTLE TEXT SHADOWS ── */
-    /* White text on dark backgrounds - tiny dark shadow */
-    .hero h1, .hero-motto, .stat-num, .stat-label,
-    .video-section .section-title, .admissions .section-title,
-    .contact .section-title, .step h3, .step p {
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    /* ── TEXT READABILITY SHADOWS ── */
+
+    /* ALL white text - dark shadow for readability */
+    h1, h2, h3, h4, h5, h6,
+    p, span, a, li, label, small, em, strong {
+      text-shadow: none;
     }
-    /* Red/gold text on any background - very light white shadow */
-    .section-label, .hero h1 em, .news-link,
-    .testi-stars, .nav-logo-text small, .hero-badge {
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+
+    /* White text on dark/navy backgrounds */
+    .hero h1,
+    .hero h1 em,
+    .hero-motto,
+    .hero p,
+    .hero-badge,
+    .stat-num,
+    .stat-label,
+    .announce,
+    .video-section .section-title,
+    .video-section .section-subtitle,
+    .video-section .section-label,
+    .admissions .section-title,
+    .admissions .section-subtitle,
+    .admissions .section-label,
+    .contact .section-title,
+    .contact-info-text,
+    .contact-detail p,
+    .contact-detail h4,
+    .step h3,
+    .step p,
+    .video-info h4,
+    .video-info p,
+    .nav-logo-text span,
+    .nav-links a,
+    .mobile-menu a,
+    .footer-brand p,
+    .footer-col h4,
+    .footer-col ul a,
+    .footer-bottom span,
+    .testi-card p,
+    .testi-author h4,
+    .testi-author span {
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 8px rgba(0,0,0,0.3);
     }
-    /* btn-outline with red border - red text shadow for outline effect */
-    .btn-outline {
-      text-shadow: 0 0 8px rgba(192,0,26,0.4);
+
+    /* Red accent text - white glow outline */
+    .section-label,
+    .nav-logo-text small,
+    .news-link,
+    .testi-stars,
+    .news-tag,
+    .about-badge small,
+    .hero-badge {
+      text-shadow: 0 0 6px rgba(255,255,255,0.8), 0 1px 2px rgba(255,255,255,0.6);
+    }
+
+    /* Navy headings on light backgrounds - very subtle */
+    .section-title,
+    .prog-body h3,
+    .news-body h3,
+    .news-body p,
+    .feat-row h4,
+    .feat-row p,
+    .section-subtitle,
+    .about-badge strong {
+      text-shadow: 0 1px 1px rgba(0,0,0,0.08);
     }
 
   </style>
