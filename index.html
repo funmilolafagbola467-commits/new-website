@@ -44,7 +44,7 @@
     .hero{min-height:92vh;background:linear-gradient(135deg,#0B1F3A 0%,#1A3560 55%,#0B2818 100%);display:flex;align-items:center;padding:60px 5%;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
     .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-    .hero-badge{display:inline-block;background:rgba(192,0,26,0.15);border:1px solid var(--gold);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+    .hero-badge{display:inline-block;background:rgba(192,0,26,0.1);border:2px solid #C0001A;color:#C0001A;padding:6px 16px;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.3rem);color:white;line-height:1.18;margin-bottom:14px;}
     .hero h1 em{color:var(--gold);font-style:normal;}
     .hero-motto{color:var(--sky);font-size:0.92rem;font-style:italic;margin-bottom:14px;font-weight:500;}
@@ -52,8 +52,8 @@
     .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
     .btn-primary{background:#1565C0;color:white;padding:13px 28px;border-radius:30px;font-weight:700;text-decoration:none;font-size:0.92rem;transition:all 0.25s;box-shadow:0 4px 20px rgba(21,101,192,0.4);display:inline-block;}
     .btn-primary:hover{background:#1E88E5;transform:translateY(-2px);}
-    .btn-outline{border:2px solid rgba(255,255,255,0.4);color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-outline{border:2px solid #C0001A;color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
+    .btn-outline:hover{border-color:#E8001F;color:white;background:rgba(192,0,26,0.15);}
     .hero-stats{display:flex;gap:30px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;}
     .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;}
     .stat-label{color:rgba(255,255,255,0.52);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;}
@@ -265,27 +265,7 @@
       .section-title{font-size:1.7rem !important;}
       .section-subtitle{font-size:0.95rem;}
       section{padding:56px 5%;}
-    }
-  
-    /* ── TEXT SHADOWS FOR READABILITY ── */
-    /* White text - dark shadow */
-    .hero h1, .hero p, .hero-motto, .hero-badge,
-    .stat-num, .stat-label,
-    .video-section .section-title, .video-section .section-subtitle,
-    .admissions .section-title, .admissions .section-subtitle,
-    .contact .section-title, .contact-info-text,
-    .contact-detail p, .contact-detail h4,
-    .step h3, .step p, .step-num,
-    .video-info h4, .video-info p,
-    .footer-brand p, .footer-col h4, .footer-col ul a,
-    .footer-bottom, nav .nav-logo-text span, nav .nav-logo-text small,
-    .nav-links a, .mobile-menu a,
-    .announce,
-    .testi-card p, .testi-author h4, .testi-author span { 
-      text-shadow: 0 1px 3px rgba(0,0,0,0.45), 0 0 6px rgba(0,0,0,0.25); 
-    }
-
-    /* Red/gold accent text - white outline shadow */
+    }    /* Red/gold accent text - white outline shadow */
     .section-label, .hero h1 em, .hero-motto,
     .news-tag, .news-link, .testi-stars,
     .nav-logo-text small, .about-badge small,
@@ -302,6 +282,24 @@
     /* Buttons text */
     .btn-primary, .btn-outline, .nav-cta, .form-submit, .btn-next, .btn-submit {
       text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+  
+    /* ── SUBTLE TEXT SHADOWS ── */
+    /* White text on dark backgrounds - tiny dark shadow */
+    .hero h1, .hero-motto, .stat-num, .stat-label,
+    .video-section .section-title, .admissions .section-title,
+    .contact .section-title, .step h3, .step p {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    /* Red/gold text on any background - very light white shadow */
+    .section-label, .hero h1 em, .news-link,
+    .testi-stars, .nav-logo-text small, .hero-badge {
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+    /* btn-outline with red border - red text shadow for outline effect */
+    .btn-outline {
+      text-shadow: 0 0 8px rgba(192,0,26,0.4);
     }
 
   </style>
