@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Career Builder Schools – Independent Tomorrow</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --navy:#0B1F3A; --blue:#1A6BA0; --sky:#4DB8E8;
@@ -21,7 +21,7 @@
     .logo-circle{width:50px;height:50px;border-radius:50%;overflow:hidden;border:none;background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
     .logo-circle img{width:100%;height:100%;object-fit:contain;}
     .nav-logo-text span{font-family:'Playfair Display',serif;color:white;font-size:1rem;font-weight:700;display:block;line-height:1.2;}
-    .nav-logo-text small{color:var(--gold);font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;}
+    .nav-logo-text small{color:var(--gold);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;font-weight:600;}
     .nav-links{display:flex;gap:26px;list-style:none;}
     .nav-links a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.87rem;font-weight:500;transition:color 0.2s;}
     .nav-links a:hover{color:var(--gold);}
@@ -44,7 +44,7 @@
     .hero{min-height:92vh;background:linear-gradient(135deg,#0B1F3A 0%,#1A3560 55%,#0B2818 100%);display:flex;align-items:center;padding:60px 5%;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
     .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-    .hero-badge{display:inline-block;background:rgba(192,0,26,0.1);border:2px solid #C0001A;color:#C0001A;padding:6px 16px;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+    .hero-badge{display:inline-block;background:rgba(192,0,26,0.1);border:2px solid #C0001A;color:#C0001A;padding:6px 16px;border-radius:20px;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.3rem);color:white;line-height:1.18;margin-bottom:14px;}
     .hero h1 em{color:var(--gold);font-style:normal;}
     .hero-motto{color:var(--sky);font-size:0.92rem;font-style:italic;margin-bottom:14px;font-weight:500;}
@@ -62,7 +62,7 @@
 
     /* SECTIONS */
     section{padding:84px 5%;}
-    .section-label{color:var(--gold);font-size:0.74rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+    .section-label{color:var(--gold);font-size:0.82rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;font-family:'Barlow Condensed',sans-serif;}
     .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.55rem);color:var(--navy);line-height:1.22;margin-bottom:14px;}
     .section-subtitle{color:var(--gray);font-size:1rem;line-height:1.75;max-width:580px;}
     .section-head-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:44px;}
@@ -291,27 +291,26 @@
     
 
   
-    /* ── TEXT OUTLINE - precise by size ── */
+    
 
-    /* Large red text only - visible stroke looks good */
+  
+    /* ── TEXT OUTLINE ── */
+    /* Large red text - 0.5px white stroke */
     .hero h1 em,
     .stat-num {
       -webkit-text-stroke: 0.5px white;
       paint-order: stroke fill;
     }
-
-    /* Small red text - NO stroke, just clean colour */
+    /* Small red text - Barlow Condensed holds 0.3px cleanly */
     .section-label,
     .hero-badge,
-    .hero-motto,
     .nav-logo-text small,
-    .news-link,
     .news-tag,
-    .testi-stars,
     .contact-detail h4,
-    .about-badge small,
-    .announce a {
-      -webkit-text-stroke: 0;
+    .announce,
+    .hero-motto {
+      -webkit-text-stroke: 0.3px white;
+      paint-order: stroke fill;
     }
 
   </style>
