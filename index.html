@@ -55,7 +55,7 @@
     .btn-outline{border:2px solid #C0001A;color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
     .btn-outline:hover{border-color:#E8001F;color:white;background:rgba(192,0,26,0.15);}
     .hero-stats{display:flex;gap:30px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;}
-    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;-webkit-text-stroke:0.4px white;paint-order:stroke fill;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;-webkit-text-stroke:0.6px white;paint-order:stroke fill;}
     .stat-label{color:rgba(255,255,255,0.52);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;}
     .hero-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.1);align-self:center;}
     .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -270,47 +270,45 @@
     .news-tag, .news-link, .testi-stars,
     .nav-logo-text small, .about-badge small,
     .form-card-header p { 
-      text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 1px 3px rgba(255,255,255,0.7); 
+      text-shadow:none; 
     }
 
     /* Dark navy text on light backgrounds - subtle shadow */
     .section-title, .prog-body h3, .news-body h3,
     .feat-row h4, .form-card-header h2 { 
-      text-shadow: 0 1px 2px rgba(0,0,0,0.12); 
+      text-shadow:none; 
     }
 
     /* Buttons text */
     .btn-primary, .btn-outline, .nav-cta, .form-submit, .btn-next, .btn-submit {
-      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      text-shadow:none;
     }
 
   
-    /* ── TEXT READABILITY ── */
+    
 
-    /* White text: barely-there shadow for depth */
-    .hero h1, .hero p, .hero-motto,
-    .stat-num, .stat-label,
-    .video-section .section-title, .video-section .section-subtitle,
-    .admissions .section-title, .admissions .section-subtitle,
-    .contact .section-title, .contact-info-text,
-    .contact-detail p, .step h3, .step p,
-    .video-info h4, .video-info p,
-    .nav-logo-text span, .nav-links a,
-    .footer-brand p, .footer-col h4, .footer-col ul a,
-    .testi-card p, .testi-author h4 {
-      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-    }
+  
+    /* ── TEXT OUTLINE ── */
+    /* Remove all shadows site-wide */
+    * { text-shadow: none !important; }
 
-    /* Red text: white outline using paint-order trick */
-    .section-label, .hero h1 em, .hero-motto,
-    .hero-badge, .stat-num,
-    .nav-logo-text small, .news-link,
-    .news-tag, .testi-stars, .contact-detail h4,
-    .about-badge small, a[style*="color:var(--gold)"],
-    a[style*="color:#C0001A"] {
-      -webkit-text-stroke: 0.4px white;
+    /* White outline on ALL red/gold coloured text */
+    .section-label,
+    .hero h1 em,
+    .hero-motto,
+    .hero-badge,
+    .stat-num,
+    .nav-logo-text small,
+    .news-link,
+    .news-tag,
+    .testi-stars,
+    .contact-detail h4,
+    .about-badge small,
+    .footer-col ul a:hover,
+    .section-head-row a,
+    .announce a {
+      -webkit-text-stroke: 0.6px white;
       paint-order: stroke fill;
-      text-shadow: none;
     }
 
   </style>
@@ -383,7 +381,7 @@
         style="width:100%;display:block;border-radius:18px;"
       ></video>
     </div>
-          <p style="color:white;font-size:0.85rem;margin-top:14px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,0.9);">Tap to watch on YouTube</p>
+          <p style="color:white;font-size:0.85rem;margin-top:14px;font-weight:600;text-shadow:none;">Tap to watch on YouTube</p>
         </div>
       </a>
     </div>
