@@ -55,7 +55,7 @@
     .btn-outline{border:2px solid #C0001A;color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
     .btn-outline:hover{border-color:#E8001F;color:white;background:rgba(192,0,26,0.15);}
     .hero-stats{display:flex;gap:30px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;}
-    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;-webkit-text-stroke:0.6px white;paint-order:stroke fill;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block}
     .stat-label{color:rgba(255,255,255,0.52);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;}
     .hero-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.1);align-self:center;}
     .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -288,27 +288,30 @@
     
 
   
-    /* ── TEXT OUTLINE ── */
-    /* Remove all shadows site-wide */
-    * { text-shadow: none !important; }
+    
 
-    /* White outline on ALL red/gold coloured text */
-    .section-label,
+  
+    /* ── TEXT OUTLINE - precise by size ── */
+
+    /* Large red text only - visible stroke looks good */
     .hero h1 em,
-    .hero-motto,
+    .stat-num {
+      -webkit-text-stroke: 0.5px white;
+      paint-order: stroke fill;
+    }
+
+    /* Small red text - NO stroke, just clean colour */
+    .section-label,
     .hero-badge,
-    .stat-num,
+    .hero-motto,
     .nav-logo-text small,
     .news-link,
     .news-tag,
     .testi-stars,
     .contact-detail h4,
     .about-badge small,
-    .footer-col ul a:hover,
-    .section-head-row a,
     .announce a {
-      -webkit-text-stroke: 0.6px white;
-      paint-order: stroke fill;
+      -webkit-text-stroke: 0;
     }
 
   </style>
