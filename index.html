@@ -55,7 +55,7 @@
     .btn-outline{border:2px solid #C0001A;color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
     .btn-outline:hover{border-color:#E8001F;color:white;background:rgba(192,0,26,0.15);}
     .hero-stats{display:flex;gap:30px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;}
-    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block;-webkit-text-stroke:0.4px white;paint-order:stroke fill;}
     .stat-label{color:rgba(255,255,255,0.52);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;}
     .hero-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.1);align-self:center;}
     .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -285,71 +285,32 @@
     }
 
   
-    /* ── TEXT READABILITY SHADOWS ── */
+    /* ── TEXT READABILITY ── */
 
-    /* ALL white text - dark shadow for readability */
-    h1, h2, h3, h4, h5, h6,
-    p, span, a, li, label, small, em, strong {
+    /* White text: barely-there shadow for depth */
+    .hero h1, .hero p, .hero-motto,
+    .stat-num, .stat-label,
+    .video-section .section-title, .video-section .section-subtitle,
+    .admissions .section-title, .admissions .section-subtitle,
+    .contact .section-title, .contact-info-text,
+    .contact-detail p, .step h3, .step p,
+    .video-info h4, .video-info p,
+    .nav-logo-text span, .nav-links a,
+    .footer-brand p, .footer-col h4, .footer-col ul a,
+    .testi-card p, .testi-author h4 {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    /* Red text: white outline using paint-order trick */
+    .section-label, .hero h1 em, .hero-motto,
+    .hero-badge, .stat-num,
+    .nav-logo-text small, .news-link,
+    .news-tag, .testi-stars, .contact-detail h4,
+    .about-badge small, a[style*="color:var(--gold)"],
+    a[style*="color:#C0001A"] {
+      -webkit-text-stroke: 0.4px white;
+      paint-order: stroke fill;
       text-shadow: none;
-    }
-
-    /* White text on dark/navy backgrounds */
-    .hero h1,
-    .hero h1 em,
-    .hero-motto,
-    .hero p,
-    .hero-badge,
-    .stat-num,
-    .stat-label,
-    .announce,
-    .video-section .section-title,
-    .video-section .section-subtitle,
-    .video-section .section-label,
-    .admissions .section-title,
-    .admissions .section-subtitle,
-    .admissions .section-label,
-    .contact .section-title,
-    .contact-info-text,
-    .contact-detail p,
-    .contact-detail h4,
-    .step h3,
-    .step p,
-    .video-info h4,
-    .video-info p,
-    .nav-logo-text span,
-    .nav-links a,
-    .mobile-menu a,
-    .footer-brand p,
-    .footer-col h4,
-    .footer-col ul a,
-    .footer-bottom span,
-    .testi-card p,
-    .testi-author h4,
-    .testi-author span {
-      text-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 0 8px rgba(0,0,0,0.3);
-    }
-
-    /* Red accent text - white glow outline */
-    .section-label,
-    .nav-logo-text small,
-    .news-link,
-    .testi-stars,
-    .news-tag,
-    .about-badge small,
-    .hero-badge {
-      text-shadow: 0 0 6px rgba(255,255,255,0.8), 0 1px 2px rgba(255,255,255,0.6);
-    }
-
-    /* Navy headings on light backgrounds - very subtle */
-    .section-title,
-    .prog-body h3,
-    .news-body h3,
-    .news-body p,
-    .feat-row h4,
-    .feat-row p,
-    .section-subtitle,
-    .about-badge strong {
-      text-shadow: 0 1px 1px rgba(0,0,0,0.08);
     }
 
   </style>
