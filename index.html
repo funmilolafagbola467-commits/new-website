@@ -55,6 +55,8 @@
     .btn-outline{border:2px solid #C0001A;color:white;padding:13px 28px;border-radius:30px;font-weight:600;text-decoration:none;font-size:0.92rem;transition:all 0.25s;}
     .btn-outline:hover{border-color:#E8001F;color:white;background:rgba(192,0,26,0.15);}
     .hero-stats{display:flex;gap:30px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;}
+    .hero-stats > div{transition:transform 0.25s ease;}
+    .hero-stats > div:hover{transform:translateY(-4px);}
     .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);font-weight:900;display:block}
     .stat-label{color:rgba(255,255,255,0.52);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;}
     .hero-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.1);align-self:center;}
@@ -369,9 +371,9 @@
         <a class="btn-outline" href="#" onclick="openVideoModal();return false;">▶ Watch School Videos</a>
       </div>
       <div class="hero-stats">
-        <div><span class="stat-num">2006</span><span class="stat-label">Year Founded</span></div>
-        <div><span class="stat-num">18+</span><span class="stat-label">Years of Excellence</span></div>
-        <div><span class="stat-num">100%</span><span class="stat-label">Govt Approved</span></div>
+        <div><span class="stat-num" data-count="2006">0</span><span class="stat-label">Year Founded</span></div>
+        <div><span class="stat-num" data-count="18" data-suffix="+">0</span><span class="stat-label">Years of Excellence</span></div>
+        <div><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Govt Approved</span></div>
       </div>
     </div>
     <div class="hero-photo" style="overflow:hidden;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.15);background:#000;max-width:320px;width:100%;align-self:center;">
@@ -707,6 +709,31 @@
     el.style.transition='opacity 0.55s ease, transform 0.55s ease';
     observer.observe(el);
   });
+
+  // Count-up animation for hero stats
+  var counted=false;
+  var statObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !counted){
+        counted=true;
+        document.querySelectorAll('.stat-num[data-count]').forEach(function(el){
+          var target=parseInt(el.getAttribute('data-count'),10);
+          var suffix=el.getAttribute('data-suffix')||'';
+          var start=0, dur=1200, startTime=null;
+          function step(ts){
+            if(!startTime)startTime=ts;
+            var progress=Math.min((ts-startTime)/dur,1);
+            el.textContent=Math.floor(progress*(target-start)+start)+suffix;
+            if(progress<1)requestAnimationFrame(step);
+            else el.textContent=target+suffix;
+          }
+          requestAnimationFrame(step);
+        });
+      }
+    });
+  },{threshold:0.3});
+  var heroStatsEl=document.querySelector('.hero-stats');
+  if(heroStatsEl)statObserver.observe(heroStatsEl);
 </script>
 </body>
 </html>
