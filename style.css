@@ -67,19 +67,6 @@ Nav a:hover {
   Color: var(--accent-red);
 }
 
-Nav a.portal-link {
-  background: var(--accent-red);
-  color: var(--white);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-Nav a.portal-link:hover {
-  background: #ff3b3b;
-  color: var(--white);
-}
-
 
 .menu-toggle {
   display: none;
@@ -304,5 +291,53 @@ Footer {
     height: 90px;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+
+/* ========================
+   FLOATING SCHOOL PORTAL BADGE
+======================== */
+
+.portal-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #D62828, #A31515);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(214, 40, 40, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: portalPulse 2.4s ease-in-out infinite;
+}
+
+.portal-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.6);
+}
+
+.portal-badge .portal-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+@keyframes portalPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(214, 40, 40, 0.45); }
+  50% { box-shadow: 0 4px 24px rgba(214, 40, 40, 0.8); }
+}
+
+@media (max-width: 480px) {
+  .portal-badge {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }
