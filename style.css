@@ -67,6 +67,19 @@ Nav a:hover {
   Color: var(--accent-red);
 }
 
+Nav a.portal-link {
+  background: var(--accent-red);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+Nav a.portal-link:hover {
+  background: #ff3b3b;
+  color: var(--white);
+}
+
 
 .menu-toggle {
   display: none;

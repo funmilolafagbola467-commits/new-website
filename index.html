@@ -27,6 +27,8 @@
     .nav-links a:hover{color:var(--gold);}
     .nav-cta{background:#1565C0;color:white;padding:9px 20px;border-radius:25px;font-weight:700;text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:all 0.2s;}
     .nav-cta:hover{background:#1E88E5;}
+    .nav-portal{background:transparent;color:var(--gold,#D4AF37);border:1.5px solid var(--gold,#D4AF37);padding:8px 18px;border-radius:25px;font-weight:700;text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:all 0.2s;margin-right:10px;}
+    .nav-portal:hover{background:var(--gold,#D4AF37);color:#0B1F3A;}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
     .hamburger span{width:25px;height:2px;background:white;border-radius:2px;display:block;transition:all 0.3s;}
 
@@ -201,7 +203,7 @@
       .footer-grid{grid-template-columns:1fr 1fr;}
     }
     @media (max-width:600px){
-      .nav-links,.nav-cta{display:none;}
+      .nav-links,.nav-cta,.nav-portal{display:none;}
       .hamburger{display:flex;}
       .hero{padding:38px 4%;}
       section{padding:54px 4%;}
@@ -336,6 +338,7 @@
     <li><a href="#admissions">Admissions</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <a class="nav-portal" href="https://schools.rollyadamstechworld.com.ng" target="_blank" rel="noopener noreferrer">School Portal</a>
   <a class="nav-cta" href="admission.html">Apply Now</a>
   <button class="hamburger" id="hamburgerBtn">
     <span></span><span></span><span></span>
@@ -350,6 +353,7 @@
   <a href="#videos">Videos</a>
   <a href="#admissions">Admissions</a>
   <a href="#contact">Contact</a>
+  <a href="https://schools.rollyadamstechworld.com.ng" target="_blank" rel="noopener noreferrer">School Portal →</a>
   <a href="admission.html">Apply Now →</a>
 </div>
 
