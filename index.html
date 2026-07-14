@@ -689,7 +689,8 @@
   // Floating portal badge: auto-shrinks into the edge after a moment.
   // Tapping it while shrunk pops it back out (no navigation).
   // Tapping it while expanded follows the link straight to the portal.
-  (function(){
+  // Deferred to window 'load' because the badge element appears later in the HTML.
+  window.addEventListener('load', function(){
     var badge = document.getElementById('portalBadge');
     if(!badge) return;
     var shrinkTimer = setTimeout(function(){ badge.classList.add('shrunk'); }, 3500);
@@ -702,7 +703,7 @@
       }
       // else: expanded, let the click through and navigate to the link
     });
-  })();
+  });
   document.querySelectorAll('#mobileMenu a').forEach(function(link) {
     link.addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.remove('open');
